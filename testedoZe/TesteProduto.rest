@@ -8,12 +8,12 @@ GET http://localhost:8000/produto/10 HTTP/1.1
 POST http://127.0.0.1:8000/produto/ HTTP/1.1
 content-type: application/json
 
+#Carolina Ramos
 {
     "nome" : "Painço da Silva",
-    "cpf" : "666777888",
-    "telefone" : "49966634567",
-    "senha" : "peninhas",
-    "matricula" : "54309",
+    "descricao" : "passarinho",
+    "foto" : "peninhas",
+    "valor_unitario" : "20",
     "grupo" : 1
 }
 
@@ -23,11 +23,10 @@ PUT http://127.0.0.1:8000/produto/2 HTTP/1.1
 content-type: application/json
 
 {
-    "nome" : "Bolinhas dos Mares",
-    "cpf" : "109874653213",
-    "telefone" : "49898009",
-    "senha" : "ariel",
-    "matricula" : "88866",
+    "nome" : "Bolinhas dos Mares2",
+    "descricao" : "bolinhas",
+    "foto" : "esferas",
+    "valor_unitario" : "22",
     "grupo" : 2
 }
 

@@ -8,8 +8,10 @@ GET http://localhost:8000/funcionario/10 HTTP/1.1
 POST http://127.0.0.1:8000/funcionario/ HTTP/1.1
 content-type: application/json
 
+#Carolina Ramos
+
 {
-    "nome" : "Abc da Silva",
+    "nome" : "Abc da Silva",                     
     "cpf" : "01923874656",
     "telefone" : "49988234567",
     "senha" : "bolinhas",
@@ -23,7 +25,7 @@ PUT http://127.0.0.1:8000/funcionario/2 HTTP/1.1
 content-type: application/json
 
 {
-    "nome" : "Bolinhas dos Testes",
+    "nome" : "Bolinhas dos Testes2",
     "cpf" : "12345678909",
     "telefone" : "49898989",
     "senha" : "abc",
