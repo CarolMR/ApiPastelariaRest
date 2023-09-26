@@ -1,10 +1,16 @@
-from fastapi import APIRouter
+from fastapi import APIRouter, Depends
 from mod_cliente.Cliente import Cliente
-
+# import da persistência
 import db
 from mod_cliente.ClienteModel import ClienteDB
 
 router = APIRouter()
+
+# import da segurança #22/09
+import security
+
+# dependências de forma global #22/09
+router = APIRouter( dependencies=[Depends(security.verify_token), Depends(security.verify_key)] )
 
 @router.get("/cliente/", tags=["Cliente"])
 def get_clientes():

@@ -1,4 +1,4 @@
-from fastapi import APIRouter
+from fastapi import APIRouter, Depends
 from mod_funcionario.Funcionario import Funcionario
 
 # import da persistência
@@ -6,6 +6,11 @@ import db
 from mod_funcionario.FuncionarioModel import FuncionarioDB
 
 router = APIRouter()
+
+# import da segurança
+import security  #22/09
+
+router = APIRouter(dependencies=[Depends(security.verify_token), Depends(security.verify_key)])   #22/09
 
 # Criar as rotas/endpoints: GET, POST, PUT, DELETE
 
@@ -27,7 +32,7 @@ router = APIRouter()
 
 #@router.delete("/funcionario/{id}", tags=["Funcionário"])
 #def delete_funcionario(id: int):
-#    return {"msg": "delete executado"}, 201
+
 
 @router.get("/funcionario/", tags=["Funcionário"])  #feito no 20/09
 def get_funcionario():
@@ -117,3 +122,4 @@ def delete_funcionario(id: int):
         return {"erro": str(e)}, 400
     finally:
         session.close() 
+
